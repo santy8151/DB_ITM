@@ -101,7 +101,7 @@ CREATE TABLE Periodico(
 
 CREATE TABLE Tesis(
 	IdPublicacion INT NOT NULL,
-	Titulo (200) NOT NULL,
+	Titulo VARCHAR(200) NOT NULL,
 	Grado VARCHAR(100) NULL,
 	Universidad VARCHAR(200) NULL,
 	FechaDefensa DATE NULL,
