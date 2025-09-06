@@ -1,4 +1,4 @@
-CREATE DATABASE BibliotecaPublicacionesITMO
+CREATE DATABASE BibliotecaPublicacionesITM
 
 USE BibliotecaPublicacionesITM
 
@@ -87,6 +87,11 @@ CREATE TABLE Revista(
 	CONSTRAINT pk_Revista_IdPublicacion PRIMARY KEY(IdPublicacion),
 	CONSTRAINT fk_Revista_IdPublicacion FOREIGN KEY(IdPublicacion) REFERENCES Publicacion(Id)
 )
+CREATE INDEX ix_Revista_FechaEdicion
+    ON Revista(FechaEdicion);
+
+CREATE UNIQUE INDEX ix_Revista_Nombre
+    ON Revista(Nombre);
 
 
 CREATE TABLE Periodico(
@@ -97,6 +102,11 @@ CREATE TABLE Periodico(
 	CONSTRAINT pk_Periodico_IdPublicacion PRIMARY KEY(IdPublicacion),
 	CONSTRAINT fk_Periodico_IdPublicacion FOREIGN KEY(IdPublicacion) REFERENCES Publicacion(Id)
 )
+CREATE UNIQUE INDEX ix_Periodico_FechaEdicion
+    ON Periodico(FechaEdicion);
+
+CREATE UNIQUE INDEX ix_Periodico_Nombre
+    ON Periodico(Nombre);
 
 
 CREATE TABLE Tesis(
@@ -108,6 +118,11 @@ CREATE TABLE Tesis(
 	CONSTRAINT pk_Tesis_IdPublicacion PRIMARY KEY(IdPublicacion),
 	CONSTRAINT fk_Tesis_IdPublicacion FOREIGN KEY(IdPublicacion) REFERENCES Publicacion(Id)
 )
+	CREATE UNIQUE INDEX ix_Tesis_FechaDefensa
+    ON Tesis(FechaDefensa);
+
+CREATE INDEX ix_Tesis_Universidad
+    ON Tesis(Universidad);
 
 
 
