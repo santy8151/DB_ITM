@@ -102,10 +102,10 @@ CREATE TABLE Periodico(
 	CONSTRAINT pk_Periodico_IdPublicacion PRIMARY KEY(IdPublicacion),
 	CONSTRAINT fk_Periodico_IdPublicacion FOREIGN KEY(IdPublicacion) REFERENCES Publicacion(Id)
 )
-CREATE UNIQUE INDEX ix_Periodico_FechaEdicion
+CREATE  INDEX ix_Periodico_FechaEdicion
     ON Periodico(FechaEdicion);
 
-CREATE UNIQUE INDEX ix_Periodico_Nombre
+CREATE  INDEX ix_Periodico_Nombre
     ON Periodico(Nombre);
 
 
@@ -118,7 +118,7 @@ CREATE TABLE Tesis(
 	CONSTRAINT pk_Tesis_IdPublicacion PRIMARY KEY(IdPublicacion),
 	CONSTRAINT fk_Tesis_IdPublicacion FOREIGN KEY(IdPublicacion) REFERENCES Publicacion(Id)
 )
-	CREATE UNIQUE INDEX ix_Tesis_FechaDefensa
+CREATE  INDEX ix_Tesis_FechaDefensa
     ON Tesis(FechaDefensa);
 
 CREATE INDEX ix_Tesis_Universidad
